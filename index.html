@@ -54,7 +54,7 @@
                     </textarea>
                     <p><a href="#apliquemos-estilos">Veamos el CSS en profundidad</a>.</p>
                 </div>
-                <div class="como-se-disena"></div>
+                <div class="como-se-disena" style="background-size: 100%;"></div>
             </div>
             <!-- Módulo 3 -->
             <div id="apliquemos-estilos" class="grid-2 gap margin-top">
@@ -195,7 +195,7 @@
                     <p>Pero también querés hacer un <strong>footer</strong> con propiedades muy similares, sólo que no querés que el footer se ancle a ningún lado. Con que esté al final de la página, nos basta.</p>
                     <h3>Ejemplo de CSS</h3>
                     <p>Así debería lucir tu CSS, si pensamos de forma modular.</p>
-                    <textarea class="full-width code">header, footer { /* Creamos las siguientes dos propiedades para dos objetos diferentes. ¿Se puede? Obvio */
+                    <textarea class="full-width code">header, footer { /* Creamos las siguientes cuatro propiedades para dos objetos diferentes. ¿Se puede? Obvio */
     background-color: #212121; /* #212121 es "casi" negro */
     border-bottom: 1px solid #000; /* #000 es negro */
     display: grid; /* La caja "toma forma de grilla" */
@@ -253,8 +253,40 @@ header {
 a:hover {
     color: var(--skyblue);
 }</textarea>
+                <p>Si buscás en inglés lo que querés hacer en CSS, por ejemplo "columns css" y le agregás "w3s" al final de la búsqueda, vas a encontrar <strong>de todo</strong> y vas a avanzar más rápido.</p>
+                <p>Habiendo dado una breve introducción de HTML y CSS y pasando por varias cosas importantes, te invito que sigas buscando por tu cuenta. Ahora vamos a <a href="#el-servidor">ver cómo trabaja un servidor y qué hay que entender para subir nuestro sitio web al mundo</a>.</p>
                 </div>
                 <div class="variables-y-unidades"></div>
+            </div>
+            <!-- Módulo 9 -->
+            <div id="el-servidor" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>El servidor</h2>
+                </div>
+                <div class="el-servidor" style="background-size: 100%;"></div>
+                <div>
+                    <p>Un servidor puede ser -casi- literalmente cualquier máquina conectada a internet mediante un router y con un <a class="tooltip" data-title="Es lo necesario para poder abrir puertas de tu router, de forma que cualquiera pueda pasar por esas puertas y acceder a tu servidor hogareño. Sin embargo, es más fácil, seguro y barato contratar un servidor.">port-forwarding</a> configurado.</p>
+                    <p>El servidor es el encargado de enviar los datos que le pide el cliente, es decir, el usuario visitante de tu sitio web.</p>
+                    <p>Cuándo avances un poco más, verás que el servidor también soporta distintas bases de datos y lenguajes de programación distintos. Hoy lo más normal es desarrollar tu sitio web en NodeJs o PHP, aunque hay gente que programa con Python o Ruby-on-rails <3</p>
+                    <p>En primer lugar, esta PC debe tener un software que sirva los documentos solicitados al cliente, como pueden ser <strong>Apache 2</strong> y <strong>Nginx</strong>. Esto es más que suficiente para servir <a class="tooltip" data-title='Se le dice "estático" a toda página web que no interactúa con bases de datos ni cambia su contenido según la interacción con el cliente.'>una página estática</a> como la que estamos haciendo, y servidores que soporten ésto y NodeJs ó PHP como lenguaje de programación son gratuitos. No es lo mejor pero es suficiente para comenzar con nuestros pequeños proyectos.</p>
+                    <p>Comúnmente Apache o Nginx buscan el archivo <strong>index.html</strong> para tu página principal, así que cuidado si subes la web que estábamos haciendo con el nombre de <strong>test.html</strong>. No explotará nada, pero el servidor no encontrará la home del sitio web.</p>
+                    <p>En teoría, un servidor puede tener instalado <strong>cualquier</strong> aplicación, aunque los planes de <a class="tooltip" data-title="Un hosting es un servidor en la nube/internet, que provee soporte para HTML, CSS, Javascript y al menos un tipo de base de datos, cómo MySQL">hosting</a> chicos son muy limitados en éste aspecto y apenas dejan subir un sitio web estándar en NodeJs o PHP (además de incluir HTML y CSS, claro).</p>
+                    <p>Te recomiendo hostings como 000WebHost, que tiene hosting gratis y sobra para trastear con estas cosas. Cuándo comiences a ver programación en NodeJs, <strong>Heroku</strong> en combinación con <strong>MongoDB Atlas</strong> te permitirá tener tu app NodeJs y tu base de datos MongoDB.</p>
+                </div>
+            </div>
+            <!-- Módulo 10 -->
+            <div id="aprendamos-nodejs" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Aprendamos NodeJs</h2>
+                </div>
+                <div>
+                    <p>NodeJs es como escribir Javascript pero del lado del servidor. Originalmente Javascript era sólo para el front-end, es decir, para hacer que la web sea más linda.</p>
+                    <p>Ahora, si sos front-end developer, no será tan difícil aprender back-end gracias a NodeJs. La <a class="tooltip" data-title="La sintáxis es la forma en la que se escribe algo">sintáxis</a> es la misma, así que tenemos medio trabajo hecho.</p>
+                    <h3>Una recomendación</h3>
+                    <p>Haría un tutorial de NodeJs + MongoDB si me creería capaz de superar en calidad al maestro Fazt, pero no conozco mejores tutoriales para ésto. Por ende, les dejo dos tutoriales para que aprendan desde cero la programación en NodeJs. Recomiendo comenzar por el primero, agarrarlo en varios días hasta entender casi todo...</p>
+                    <p> videos aquí :D </p>
+                </div>
+                <div class="aprendamos-nodejs" style="background-size: 100%;"></div>
             </div>
         </article>  <!-- !Article-->
         <!-- !Root -->
