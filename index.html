@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial HTML | FoxIT</title>
+    <title>Tutorial para desarrollo web full-stack | FoxIT</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -11,8 +11,8 @@
         <!-- Root -->
         <article>   <!-- Article-->
             <div id="first" data-image="img/first.webp"></div>
-            <h1>Tutorial de HTML</h1>
-            <p>Explico muchas cosas, como si nunca antes hubieras programado. Sin embargo, se espera un mínimo de inglés para poder conocer el significado de <a class="tooltip" data-title="Head = Cabeza">head</a>, <a class="tooltip" data-title="Body = Cuerpo">body</a>, <a class="tooltip" data-title="Article = Artículo">article</a>, <a class="tooltip" data-title="Footer = Pie de página">footer</a>, etc.</p>
+            <h1>Tutorial para desarrollo web full-stack</h1>
+            <p>Explico muchas cosas, como si nunca antes hubieras programado. Sin embargo, se espera entusiasmo, curiosidad (para buscar en <a class="tooltip" data-title="Cada lenguaje, como HTML y CSS, tienen documentación sobre su uso. Si bien en este tutorial vas a aprender cómo usar el lenguaje, no se pretende dar TODA la información servida. Más bien se prefiere dar la base del pensamiento a la hora de hacer la web, para que luego te expandas buscando por Internet o preguntando.">la documentación</a>) y un mínimo de inglés para poder conocer el significado de <a class="tooltip" data-title="Head = Cabeza">head</a>, <a class="tooltip" data-title="Body = Cuerpo">body</a>, <a class="tooltip" data-title="Article = Artículo">article</a>, <a class="tooltip" data-title="Footer = Pie de página">footer</a>, etc.</p>
             <p>Poné el cursor del mouse (o dedo si estás desde una pantalla touch) arriba de los links en color azúl para tener información extra. ¡Ojo! Los links en color celeste te llevan a otras páginas, para mostrarte links de interés y documentación vital para ser un buen desarrollador :)</p>
             <p>Te recomiendo usar <a href="#">Visual Studio Code</a> para desarrollar sitios webs. Es mucho mejor que el block de notas de tu sistema operativo y es lo mejorcito para <a class="tooltip" data-title="Codear es, básicamente, escribir código">codear</a>, y muy flexible y adaptable a otros lenguajes (cómo C/C++, C#, Java, Python, etc). ¡Empecemos!</p>
             <!-- Módulo 1 -->
@@ -44,10 +44,10 @@
                 </div>
                 <div>
                     <p>Como estábamos diciendo, las etiquetas te permitirán crear objetos para colocar en su web. Pero el aspecto de estos objetos estarán determinados a tu gusto y <strong>con otro lenguaje</strong>: CSS.</p>
-                    <p>Hoy por hoy es muy común que un diseñador "<a class="tooltip" data-title="Un front-end developer es un programador que se ocupa de todo el diseño del sitio web y coordina con el back-end developer (el back-end dev es quién recibe, procesa y devuelve información a la base de datos y al usuario que ve la página).">front-end</a>" sepa programación y dos lenguajes o más.</p>
+                    <p>Hoy por hoy es muy común que un diseñador "<a class="tooltip" data-title="Un front-end developer es un programador que se ocupa de todo el diseño del sitio web y coordina con el back-end developer (el back-end dev es quién procesa información desde y hacia la base de datos, y usa esa información para que el front-end dev pueda interactuar con el usuario).">front-end</a>" sepa programación y dos lenguajes o más.</p>
                     <p>Escribir CSS es como escribir en Inglés o Javascript (ponele), que dicho sea de paso, será otro lenguaje que tendrás que dominar en un futuro.</p>
                     <p>Supongamos que querés nombrar cada objeto con un identificador único. Tomando el ejemplo anterior, podríamos asignar un <strong>id</strong> (identificador) así:</p>
-                    <h3>Ejemplo:</h3>
+                    <h3>Ejemplo</h3>
                     <textarea class="code full-width"><h1 id="tituloPrincipal">La etiqueta H1 crea un título de importancia máxima</h1>
 <p id="queEsUnLaEtiquetaDeParrafo">La etiqueta "p" nos sirve para escribir un párrafo de texto.</p>
 <p id="tamanosParaTitulos">Hay varios tamaños para los títulos, que van del uno (1) al seis (6)</p>
@@ -65,7 +65,7 @@
                 <div>
                     <p>Ojo, lo que te voy a enseñar ahora no va a funcionar sólo. De hecho, aún no te dije que el código HTML de tu sitio web debería estar en un archivo con <a class="tooltip" data-title='Windows por defecto tiene la opción "Ocultar las Extensiones de archivo conocidas", cómo por ejemplo HTML y CSS. Es recomendable desactivar esto desde las opciones del Explorador de Windows'>extensión <strong>html</strong></a>. Por ejemplo, podrías crear un archivo llamado <strong>test.html</strong> ahora mismo, y pegar el código que escribí más arriba, con los IDs.</p>
                     <p>¡Entonces bien! Cada identificador en HTML puede ser editado desde el CSS, así que crea un archivo <strong>main.css</strong> y pega el siguiente código.</p>
-                    <h3>Ejemplo:</h3>
+                    <h3>Ejemplo</h3>
                     <textarea class="code full-width">#tituloPrincipal {
                             font-size: 28px; /* Tamaño de la tipografía */
                             color: blue; /* Color de la tipografía */
@@ -99,7 +99,7 @@
                     <textarea class="full-width code" style="min-height: 40px;">a { display: block; } /* Fijate como las etiquetas HTML, se editan con CSS sin poner un hashtag ni otro símbolo */</textarea>
                     <p>En ese caso, el mismo link pero mostrado como <strong>bloque</strong>, sería así:</p>
                     <p style="text-align: center;border: 1px dashed var(--blue);">El link ya no ocupa <a style="display: block;">sólo un pequeño espacio</a></p>
-                    <p>¿Viste como el borde inferior ocupa todo el ancho? Eso demuestra como se expandió la caja que contiene el texto del link. Claramente el texto no ocupa todo el ancho por la simple razón de que no es una frase súper larga. Si querés ver más en detalle, hacé clic derecho en el link y luego <strong>Inspeccionar elemento</strong>. ¡Tu navegador te va a mostrar todo el código de esta página!</p>
+                    <p>¿Viste como el borde inferior ocupa todo el ancho? Eso demuestra como se expandió la caja que contiene el texto del link. Claramente el texto no ocupa todo el ancho por la simple razón de que no es una frase súper larga. Si querés ver más en detalle, hacé clic derecho en el link y luego <a class="tooltip" data-title='O apretando F12 en tu teclado para abrir las herramientas de desarrollador'><strong>Inspeccionar elemento</strong></a>. ¡Tu navegador te va a mostrar todo el código de esta página!</p>
                 </div>
                 <div class="cajas-comunes-y-bloques"></div>
             </div>
@@ -131,7 +131,7 @@
 </body>
 </html></textarea>
                     <p>Recordá que <a class="tooltip" data-title="A excepción de <link> (para importar CSS o tipografías), <br> (para salto de línea), <hr> (para crear una línea separadora), <img> (para imágenes)... y algunas más que me esté olvidando">prácticamente todas las etiquetas en HTML se abren y se cierran</a> en un órden determinado. Por ende, las etiquetas que abrimos deben cerrarse "de adentro para afuera", es decir que la primer etiqueta que se abre es "el padre", y se cerrará último.</p>
-                    <h3>Ejemplo:</h3>
+                    <h3>Ejemplo</h3>
                     <textarea class="full-width code"><div> <!-- El "div" es una etiqueta muy usada para crear cajas personalizadas, mediante #identificadores y .clases -->
     <p>
         Una <a href="#">extensión <strong>html</strong></a>.
@@ -275,6 +275,153 @@ a:hover {
                 </div>
             </div>
             <!-- Módulo 10 -->
+            <div id="el-dinamismo" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>El dinamismo</h2>
+                </div>
+                <div class="el-dinamismo"></div>
+                <div>
+                    <p>El código Javascript le da cierto dinamismo a nuestro sitio web, porque permite un manejo más "reactivo" de los eventos que suceden en <a class="tooltip" data-title='Cuándo hablamos de "Runtime" o "Tiempo de ejecución", nos referimos a todo lo que sucede mientras un software está ejecutándose.'>runtime</a>.</p>
+                    <p>Javascript tiene acceso completo al <a class="tooltip" data-title='El DOM es todo el documento HTML, desde que comienza en la etiqueta <html> hasta la finalización de la página.'>DOM</a>, y es por eso que podemos llamar a procedimientos/funciones para que cambien objetos de nuestra página con un clic del usuario. Hagamos una sencilla calculadora.</p>
+                    <textarea class="full-width code"><input type="number" id="a1" placeholder="Digita un número"><br />
+<input type="number" id="b1" placeholder="Digita un número">
+<input type="button" onclick="calc()" value="Calcular suma">
+<script>
+function calc() { // ¡Mirá! Esto es un comentario en Javascript
+    const   a1 = document.getElementById('a1').value,
+            b1 = document.getElementById('b1').value; // Fijate como creé dos constantes, separandolas por coma :D
+    console.log(a1+b1); // Imprimo por consola el resultado. Apretá F12 en tu teclado y andá a la pestaña "Consola" para ver lo que dice Javascript
+}
+</script></textarea>
+                <p>Aaah, Javascript es hermoso... <a class="tooltip" data-title='Apretando F12 desde tu navegador y yendo a la pestaña "Consola", podrás ver todos los "console.log" de Javascript'>Si ejecutaste este código en un archivo HTML para probarlo</a>, te habrás dado cuenta que si escribís <strong>2</strong> en un campo "number" y <strong>3</strong> en el otro, la consola te habrá juntado ambos números, por lo que verías <strong>23</strong>, no 5.</p>
+                <p>Esto es porque si bien, las etiquetas <strong>input</strong> son de tipo "número", en realidad ésto nos sirve sólo para mostrar un teclado con números en dispositivos que tengan teclado virtual y poco más.</p>
+                <p>Los valores dentro de esos dos inputs llegan a Javascript como <strong>string</strong>, osea texto. Javascript suma texto (en realidad, lo concatena), pero no es lo que nosotros queremos.</p>
+                <p>Para que pueda sumar estos valores, usá la función parseInt() así:</p>
+                <textarea class="full-width code"><input type="number" id="a1" placeholder="Digita un número"><br />
+<input type="number" id="b1" placeholder="Digita un número"><br />
+<input type="button" onclick="calc()" value="Calcular suma">
+<script>
+    function calc() {
+        const   a1 = parseInt(document.getElementById('a1').value),
+                b1 = parseInt(document.getElementById('b1').value);
+        console.log(a1+b1);
+    }
+</script></textarea>
+                <p>Mucho mejor, ¿no? Ahora hace lo que debería hacer...</p>
+                <p>Veamos que es esto de <strong>document</strong> y <strong>getElementById</strong>.</p>
+                </div>
+            </div>
+            <!-- Módulo 11 -->
+            <div id="objetos" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Objetos</h2>
+                </div>
+                <div>
+                    <p>Javascript hizo un avance grande en poner los objetos como algo del día a día. Es algo que ya se veía venir con las estructuras de datos de lenguajes viejísimos como C.</p>
+                    <p>Suponete que querés re-crear a tu mascota en Javascript, como un objeto. Probablemente tu perro, gato, etc; sea mucho más que un objeto, pero en Javascript así se denominan. Si tuviera que crear un objeto de mi gata, sería algo así:</p>
+                    <textarea class="full-width code">let gata = {
+    // Las propiedades/keys (del lado izquierdo) no pueden tener espacios, símbolos ni tildes. Los valores/datos (del lado derecho) pueden contener cualquier caracter, siempre y cuándo esté entre comillas.
+    name: 'Lilo',
+    tamano: 'grande',
+    edad: 16, // Ésto es un int (número entero) para Javascript
+    raza: 'ninguna',
+    genero: femenino 
+}
+console.log(gata);</textarea>
+                    <p>Con <strong>let</strong> y un nombre (sin espacios ni tildes o símbolos raros) creamos una variable. Podría haber creado <a class="tooltip" data-title="Una constante se crea así: const nombreDeMiConstante = 'prueba';">una constante</a>, pero eso me hubiera imposibilitado cambiar las propiedades de mi gata en un futuro, por la obviedad de que creé "algo constante".</p>
+                    <p>Verás, abro unas llaves y luego la estructura es:</p>
+                    <ul>
+                        <li class="grid-2 gap"><div>propiedad1:</div><div>contenido,</div></li>
+                        <li class="grid-2 gap"><div>propiedad2:</div><div>contenido</div></li>
+                    </ul>
+                    <p>Cerrás la llave, y listo. La última propiedad (o "key") no debe tener una coma al fin de la línea.</p>
+                    <p>Todo lo que encierro entre comillas (ya sean simples o dobles) son strings, es decir, texto. El número <strong>16</strong> lo puse sin comillas para que <a class="tooltip" data-title='JS es la abreviación de "Javascript"'>JS</a> lo tomará como un número, no una letra.</p>
+                    <p>De ésta forma, si quisiera saber la edad de mi gata, podría ejecutar un console.log:</p>
+                    <textarea class="full-width code" style="min-height: 120px;">console.log(`La edad de ${gata.name} es de ${gata.edad} años.`); // ¡OJO! No son comillas, son "backslash". Buscá cómo escribirlas con tu distribución de teclado, porque si usás comillas cuándo concatenás texto con variables, es un poco más difícil codearlo.</textarea>
+                    <hr>
+                    <p>Que fácil es acceder a un objeto, ¿no? Un puntito y listo :P</p>
+                    <p>Bueno, el objeto <strong>document</strong> es igual de fácil. Javascript tiene procedimientos nativos para hacerte la vida más fácil. En los objetos podés almacenar <a class="tooltip" data-title='Acordate que las funciones se escriben: miFuncion(parametro1, parametro2, etc)'>funciones</a> dentro, además de simples nombres, tamaños y edades.</p>
+                    <p>La función <strong>getElementById()</strong> recibe un string como parámetro, y te devuelve un dato. Ese dato que "sale" de la función la podemos almacenar en una variable, como había hecho en el módulo anterior con <strong>a1</strong> y <strong>b1</strong>. Si no guardamos la devolución de una función, ese dato quedará en el abismo...</p>
+                    <p>Fijate que la función <strong>getElementById()</strong>, obtiene el ID completo, osea que los parámetros HTML cómo <a class="tooltip" data-title="href, src, etc">los que mencionaba antes</a> están a completa disposición.</p>
+                    <p>Probá de obtener una etiqueta de imágen, asignando un ID desde el HTML y obteniendolo con Javascript. ¡Después hacé un console.log de eso y mirá lo que te encontrás!</p>
+                    <p>Yo hice esa prueba con el input a1 del capítulo anterior, así:</p>
+                    <textarea class="full-width code" style="min-height: 40px;">console.log(document.getElementById('a1'));</textarea>
+                    <p>Obtuve buena data, a la que puedo acceder "con puntitos" después:</p>
+                    <img src="img/avance-sitio-web/obtener-input.png" alt="">
+                </div>
+                <div class="objetos"></div>
+            </div>
+            <!-- Módulo 12 -->
+            <div id="en-runtime" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>En runtime</h2>
+                </div>
+                <div class="en-runtime"></div>
+                <div>
+                    <p>Si tengo suerte, seguramente te preguntaste porqué la calculadora que programé antes tiene dos constantes y cómo hago para "editar" estos valores, ya que puedo cambiar los números de los <strong>input:number</strong> y de hecho esos valores se ven en las constantes <strong>a1</strong> y <strong>b1</strong>.</p>
+                    <p>En realidad, esos valores nunca se editan :O El tema está en que toda la información que almacena una función internamente <strong>se destruye</strong> al finalizar. Osea que luego de que Javascript ejecutó la última línea de mi función <strong>calc()</strong>, las constantes y la función en sí desaparecieron de la memoria de nuestro sistema.</p>
+                    <p>Por ende, la próxima vez que se llame a la función, se crearán nuevas constantes con los datos que contengan a1 y b1, por lo que nunca hay una edición, sino que se destruyen al finalizar las órdenes y se crean nuevas constantes al re-llamar la función. It's magic!</p>
+                    <p>Esto que digo <strong>es vital</strong> para entender un poquito más el <a class="tooltip" data-title='El scope de un dato o método (variable/constante o función, respectivamente) es desde qué partes del código se pueden acceder a otras y cuales no.'><strong>scope</strong></a> en los lenguajes de programación.</p>
+                    <hr>
+                    <p>A veces utilizo constantes cómo parte de la "programación defensiva", un TOC que me dio un profesor de tanto que insistió.</p>
+                    <p>Evita la edición de un dato que no debería cambiar en runtime, en el hipotético caso de que lo haga sin querer :P</p>
+                    <p>La imágen que acompaña este título explica más o menos bien lo que sería un desperdicio de memoria. En <a class="tooltip" data-title="C y C++ son lenguajes de programación de bajo y medio nivel respectivamente, algo más difíciles de programar en comparación con Javascript, Java y Python">C y C++</a> uno puede pedir un espacio de memoria dentro de una función que, si no se maneja correctamente, no se destruye luego de finalizar la función.</p>
+                </div>
+            </div>
+            <!-- Módulo 13 -->
+            <div id="no-vamos-a-aprender-jquery" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>No vamos a aprender JQuery</h2>
+                </div>
+                <div>
+                    <p>Hace mucho, tomé un curso dónde me enseñaron <strong>JQuery</strong> y luego <strong>Angular</strong>, que es de otro planeta. Usé JQuery en mi primer proyecto profesional pero se quedó <strong>muy corto</strong> para lo que tenía que hacer. De ahí salté a React y Vue.js. Me quedé con Vue.js porque es muy fácil de implementar (usar) y además puede adaptarse muy rápido incluso a sitios viejos y sin extrema necesidad de configurar otros componentes externos, como <strong>babel</strong> o <strong>webpack</strong>.</p>
+                    <p>¡Así que bienvenido a Vue.Js! Crear una <a class="tooltip" data-title='Una instancia es un objeto que podés crear dentro de una variable, y acceder a un montón de propiedades y funciones del objeto original. Viene muy de la mano con las "clases" en Javascript, que aprenderemos más adelante'>instancia</a> de Vue.Js es muy fácil, pero primero veamos porqué usar <strong>Vue.js</strong>.</p>
+                    <p>Si tu sitio web (que cuándo es algo serio le decimos "aplicación" o "app") necesita manejar datos en runtime o solicitar datos de otra web, es probable que Vue.js, React y Angular te hagan todo más fácil.</p>
+                </div>
+                <div class="no-vamos-a-aprender-jquery"></div>
+            </div>
+            <!-- Módulo 14 -->
+            <div id="configurar-una-vista-de-vue-js" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Configurar una vista de Vue.js</h2>
+                </div>
+                <div class="configurar-una-vista-de-vue-js"></div>
+                <div>
+                    <p>Entre tus etiquetas head, incluí el Javascript necesario, osea incluí el framework Vue.js y Axios.</p>
+                    <textarea class="full-width code">wasd</textarea>
+                    <p>Instalá el plugin de Vue.Js para <a href="#">Firefox</a> o <a href="#">Chrome</a>, de forma tal que puedas acceder a tu aplicación Vue.js de forma más conveniente, desde una pestaña de las Herramientas de Desarrollador (apretando F12).</p>
+                    <p>Una vez que tengas Vue.js y Axios entre tus etiquetas head, podés instanciar Vue en una variable o constante, y luego pasarle un objeto como parámetro.</p>
+                    <h3>Ejemplo</h3>
+                    <textarea class="full-width code">let bitcoinApp = new Vue(
+    {   // Acá comienza el objeto
+        el: '#bitcoinApp', // 'el' es el elemento HTML que accederá a 'data'
+        data: { // 'data' es un objeto dentro del objeto de Vue, ¿que loco, no? :D
+            btcData: {} // Creo este objeto vacío para llenarlo después
+        },
+        methods: { // Acá puedo escribir funciones/métodos
+
+        },
+        delimiters: ['__', '__'] // Esta propiedad me permite indicar con qué símbolos acceder a la información de 'data'. Después lo explico mejor :)
+    }   // Acá finaliza el objeto
+);</textarea>
+                <p>Si creás un objeto nuevo en HTML con el identificador "bitcoinApp", podrías acceder a toda <a class="tooltip" data-title='¡Ojo! "data" dentro de la instancia Vue está contenida en una clase de Javascript y enmascarada, por eso es más complicado descubrir el valor de los datos en comparación con Javascript puro. Por eso, recomiendo tener el plugin de Vue instalado en el navegador.'>la información presente en <strong>bitcoinApp.data</strong></a>.</p>
+                </div>
+            </div>
+            <!-- Módulo 15 -->
+            <div id="consumir-datos-de-otra-web" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Consumir datos de otra web</h2>
+                </div>
+                <div>
+                    <p>Consumir datos de otra web es una genialidad. Es parte del concepto "<a class="tooltip" data-title='"Database as a service" trata de tener mucha información dentro de una base de datos pública, para que muchas aplicaciones usen ésto a su favor y/o enriquecer información de software externo a la base de datos en sí.'>database as a service</a>" y podría facilitarte muchas horas (o días) de desarrollo. Cuándo un servicio/API así está disponible, se usa y listo.</p>
+                    <p>Hace mucho tiempo que perdió (algo) de importancia el hecho de "sé desarrollar cualquier cosa y lo voy a hacer". Ahora es más importante hacer software rápido, así que si hay una <a class="tooltip" data-title='Una API es, básicamente, una "DB as a service".'>API</a> gratis y te conviene, ¡usala!</p>
+                    <hr>
+                    <p>Consumir datos con Vue.js y <strong>Axios</strong> es muy fácil. Se trata de que Axios haga una llamada AJAX a una <a class="tooltip" data-title="Una URL es una dirección web">URL</a> y recopile toda la información.</p>
+                    <p>Vamos a usar la API pública de Bitstamp, para saber el precio del Bitcoin actualmente.</p>
+                </div>
+                <div class="consumir-datos-de-otra-web"></div>
+            </div>
+            <!-- Módulo N -->
             <div id="aprendamos-nodejs" class="grid-2 gap margin-top">
                 <div class="full-width separator text-center">
                     <h2>Aprendamos NodeJs</h2>
@@ -294,7 +441,7 @@ a:hover {
             <div id="aprendamos-nodejs" class="grid-2 gap margin-top">
                 <div class="full-width separator text-center">
                     <h2>¿Qué más podríamos ver?</h2>
-                    <p>Enviá un email a undefined@outlook.com.ar con sugerencias.</p>
+                    <p>Enviá un email a santiagogimenez@outlook.com.ar con sugerencias.</p>
                 </div>
             </div>
         </article>  <!-- !Article-->
