@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML | FoxIT</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="root">
+        <!-- Root -->
+        <article>   <!-- Article-->
+            <div id="first" data-image="img/first.jpg"></div>
+            <h1>Tutorial de HTML</h1>
+            <p>Explico muchas cosas, como si nunca antes hubieras programado. Sin embargo, se espera un mínimo de inglés para poder conocer el significado de <a class="tooltip" data-title="Head = Cabeza">head</a>, <a class="tooltip" data-title="Body = Cuerpo">body</a>, <a class="tooltip" data-title="Article = Artículo">article</a>, <a class="tooltip" data-title="Footer = Pie de página">footer</a>, etc.</p>
+            <p>Poné el cursor del mouse (o dedo si estás desde una pantalla touch) arriba de los links en color azúl para tener información extra. ¡Ojo! Los links en color celeste te llevan a otras páginas, para mostrarte links de interés y documentación vital para ser un buen desarrollador :)</p>
+            <p>Te recomiendo usar <a href="#">Visual Studio Code</a> para desarrollar sitios webs. Es mucho mejor que el block de notas de tu sistema operativo y es lo mejorcito para <a class="tooltip" data-title="Codear es, básicamente, escribir código">codear</a>, y muy flexible y adaptable a otros lenguajes (cómo C/C++, C#, Java, Python, etc). ¡Empecemos!</p>
+            <!-- Módulo 1 -->
+            <div id="que-es-y-como-se-escribe-el-html" class="grid-2 gap">
+                <div class="full-width separator text-center">
+                    <h2>¿Qué es y como se escribe el HTML?</h2>
+                </div>
+                <div class="que-es-html"></div>
+                <div>
+                    <p>El código HTML nos sirve para crear los elementos de nuestro sitio web. Cada elemento tiene un nombre, cómo <strong>h1</strong>, <strong>p</strong>, <strong>a</strong>, etc. Estos nombres aparecen -en el código- entre "picos" de apertura y cierre.</p>
+                    <ul>
+                        <li class="grid-2 gap prevent"><div>Signo menor que</div><div><</div></li>
+                        <li class="grid-2 gap prevent"><div>Signo mayor que</div><div>></div></li>
+                    </ul>
+                    <p>Encerrar un "nombre" entre picos de apertura y cierre se lo denomina <strong>etiqueta HTML</strong>. Estas etiquetas HTML abundan en los sitios webs actuales, y permiten crear títulos de distinta importancia, párrafos, links y más.</p>
+                    <div class="full-width">
+                        <h3>Ejemplo</h3>
+                        <textarea class="code full-width"><h1>La etiqueta H1 crea un título de importancia máxima</h1>
+<p>La etiqueta "p" nos sirve para escribir un párrafo de texto.</p>
+<p>Hay varios tamaños para los títulos, que van del uno (1) al seis (6)</p>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Módulo 2 -->
+            <div id="como-se-disena-una-web" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>¿Cómo se diseña una web?</h2>
+                </div>
+                <div>
+                    <p>Como estábamos diciendo, las etiquetas te permitirán crear objetos para colocar en su web. Pero el aspecto de estos objetos estarán determinados a tu gusto y <strong>con otro lenguaje</strong>: CSS.</p>
+                    <p>Hoy por hoy es muy común que un diseñador "<a class="tooltip" data-title="Un front-end developer es un programador que se ocupa de todo el diseño del sitio web y coordina con el back-end developer (el back-end dev es quién recibe, procesa y devuelve información a la base de datos y al usuario que ve la página).">front-end</a>" sepa programación y dos lenguajes o más.</p>
+                    <p>Escribir CSS es como escribir en Inglés o Javascript (ponele), que dicho sea de paso, será otro lenguaje que tendrás que dominar en un futuro.</p>
+                    <p>Supongamos que querés nombrar cada objeto con un identificador único. Tomando el ejemplo anterior, podríamos asignar un <strong>id</strong> (identificador) así:</p>
+                    <h3>Ejemplo:</h3>
+                    <textarea class="code full-width"><h1 id="tituloPrincipal">La etiqueta H1 crea un título de importancia máxima</h1>
+<p id="queEsUnLaEtiquetaDeParrafo">La etiqueta "p" nos sirve para escribir un párrafo de texto.</p>
+<p id="tamanosParaTitulos">Hay varios tamaños para los títulos, que van del uno (1) al seis (6)</p>
+                    </textarea>
+                    <p><a href="#apliquemos-estilos">Veamos el CSS en profundidad</a>.</p>
+                </div>
+                <div class="como-se-disena"></div>
+            </div>
+            <!-- Módulo 3 -->
+            <div id="apliquemos-estilos" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>¡Apliquemos estilos!</h2>
+                </div>
+                <div class="apliquemos-estilos"></div>
+                <div>
+                    <p>Ojo, lo que te voy a enseñar ahora no va a funcionar sólo. De hecho, aún no te dije que el código HTML de tu sitio web debería estar en un archivo con <a class="tooltip" data-title='Windows por defecto tiene la opción "Ocultar las Extensiones de archivo conocidas", cómo por ejemplo HTML y CSS. Es recomendable desactivar esto desde las opciones del Explorador de Windows'>extensión <strong>html</strong></a>. Por ejemplo, podrías crear un archivo llamado <strong>test.html</strong> ahora mismo, y pegar el código que escribí más arriba, con los IDs.</p>
+                    <p>¡Entonces bien! Cada identificador en HTML puede ser editado desde el CSS, así que crea un archivo <strong>main.css</strong> y pega el siguiente código.</p>
+                    <h3>Ejemplo:</h3>
+                    <textarea class="code full-width">#tituloPrincipal {
+                            font-size: 28px; /* Tamaño de la tipografía */
+                            color: blue; /* Color de la tipografía */
+                            padding-bottom: 2px; /* Espacio entre la parte inferior de las letras y el borde inferior de la caja */
+                            border-bottom: 2px solid blue; /* Borde inferior, estará debajo del texto */
+                    }
+                    #queEsUnLaEtiquetaDeParrafo {
+                            font-style: italic; /* 'italic' pone la fuente en cursiva */
+                    }
+                    #tamanosParaTitulos {
+                            font-style: bold; /* 'bold' pone la tipografía en negrita */
+                    }
+                    </textarea>
+                    <p>Observá la sintáxis de CSS. Los IDs de HTML se referencian en CSS con el <a class="tooltip" data-title='Signo numeral, o "hashtag"'>signo numeral</a>, luego ponemos su nombre (debe coincidir con el escrito en HTML) y abrimos una llave. Entre las llaves de apertura y cierre están las <strong>propiedades del objeto</strong> que estamos creando, los cuáles se aplicarán a la etiqueta que tenga ese identificador en HTML.</p>
+                    <p>Los comentarios en CSS se abren con <strong>/*</strong> y se cierran con <strong>*/</strong>. Un comentario es una buena forma de explicar qué estamos haciendo en esa línea de código. :)</p>
+                    <p>Ok... si abrís tu archivo <strong>test.html</strong> desde tu navegador preferido, no vas a ver ningún estilo, ni texto en cursiva o similar. Veamos <a href="#cajas-comunes-y-bloques">un concepto más</a>, muy importante.</p>
+                    <p>Después, aprendamos la estructura principal de un archivo HTML y <a href="#ensamblemos-todo">cómo ensamblar todo</a> :).</p>
+                </div>
+            </div>
+            <!-- Módulo 4 -->
+            <div id="cajas-comunes-y-bloques" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Cajas comunes y bloques</h2>
+                </div>
+                <div>
+                    <p>Buenísimo, entonces si seguiste el tutorial al pie de la letra, tendrías un título y dos párrafos creados. Cada etiqueta HTML crea <strong>una caja</strong>. Hay cajas "comunes", que su tamaño es el justo y necesario para contener los objetos que tengan dentro, y cajas "de bloque". Éstas últimas tienen la propiedad CSS <strong>display: block;</strong> por defecto y ocupan todo el ancho que tengan disponible, cómo los títulos H1, H2, H3, etc.</p>
+                    <p>Por esta razón, si vas al identificador de tu Titular H1 (en el CSS), y escribís dentro la propiedad <strong>text-align: center;</strong>, el titular se va a centrar horizontalmente en la pantalla, no así con otras etiquetas, cómo <a class="tooltip" data-title='La etiqueta <a> sirve para crear links.'>los links</a> que son cajas comunes.</p>
+                    <h3 style="text-align: center;border: 1px dashed var(--blue);">Ejemplo de caja de bloque<br />
+                    ¡Hey! Ocupo todo el ancho que tengo disponible</h3>
+                    <p>El link ocupa <a>sólo un pequeño espacio</a>, aunque podríamos poner <strong>display: block;</strong> en su CSS, así:</p>
+                    <textarea class="full-width code" style="min-height: 40px;">a { display: block; } /* Fijate como las etiquetas HTML, se editan con CSS sin poner un hashtag ni otro símbolo */</textarea>
+                    <p>En ese caso, el mismo link pero mostrado como <strong>bloque</strong>, sería así:</p>
+                    <p style="text-align: center;border: 1px dashed var(--blue);">El link ya no ocupa <a style="display: block;">sólo un pequeño espacio</a></p>
+                    <p>¿Viste como el borde inferior ocupa todo el ancho? Eso demuestra como se expandió la caja que contiene el texto del link. Claramente el texto no ocupa todo el ancho por la simple razón de que no es una frase súper larga. Si querés ver más en detalle, hacé clic derecho en el link y luego <strong>Inspeccionar elemento</strong>. ¡Tu navegador te va a mostrar todo el código de esta página!</p>
+                </div>
+                <div class="cajas-comunes-y-bloques"></div>
+            </div>
+            <!-- Módulo 5 -->
+            <div id="ensamblemos-todo" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Ensamblemos todo</h2>
+                </div>
+                <div class="ensamblemos-todo"></div>
+                <div>
+                    <p>Ahora que sabés el concepto de cajas en forma de bloque, pasemos a unir el HTML con el CSS que estamos creando.</p>
+                    <p>La primer parte de un archivo HTML sería el siguiente. La primer linea indica que el documento es de tipo HTML (5). Luego se abre la etiqueta HTML e indica el lenguaje de la página web.</p>
+                    <p>Lo importante es lo que va entre nuestra cabecera (head). Allí estará el nombre de la pestaña en el navegador, <a class="tooltip" data-title="Se recomienda usar UTF-8, que interpreta a la perfección todos los caracteres, tildes, etc">la codificación del texto</a> y los archivos CSS a utilizar, entre otras cosas que veremos mucho más adelante.</p>
+                    <textarea class="full-width code"><!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi sitio web <3</title>
+        <link rel="stylesheet" href="css/main.css"> <!-- Guarda tu CSS en la carpeta "CSS", para emprolijar tu proyecto y que no haya archivos sueltos. Fijate que 'href' referencia a la carpeta "CSS" y luego, al archivo "main.css", por lo cuál si esa ruta no existe, HTML no podrá cargar el archivo -->
+    </head></textarea>
+                    <p>Prestá atención a los comentarios en HTML, que se crean de una forma diferente a la que te enseñé con CSS :O</p>
+                    <p>Entonces bien, el código anterior no lo ve nuestro usuario pero nos sirve a nosotros para importar archivos extra CSS y Javascript, además de que Google también utiliza varios datos de nuestro head para posicionarnos en las búsquedas.</p>
+                    <p>Veamos el resto del HTML, que es lo que <strong>verá el usuario</strong> en su pantalla.</p>
+                    <textarea class="full-width code"><body>
+    <h1 id="tituloPrincipal">La etiqueta H1 crea un título de importancia máxima</h1>
+    <p id="queEsUnLaEtiquetaDeParrafo">La etiqueta "p" nos sirve para escribir un párrafo de texto.</p>
+    <p id="tamanosParaTitulos">Hay varios tamaños para los títulos, que van del uno (1) al seis (6)</p>
+</body>
+</html></textarea>
+                    <p>Recordá que <a class="tooltip" data-title="A excepción de <link> (para importar CSS o tipografías), <br> (para salto de línea), <hr> (para crear una línea separadora), <img> (para imágenes)... y algunas más que me esté olvidando">prácticamente todas las etiquetas en HTML se abren y se cierran</a> en un órden determinado. Por ende, las etiquetas que abrimos deben cerrarse "de adentro para afuera", es decir que la primer etiqueta que se abre es "el padre", y se cerrará último.</p>
+                    <h3>Ejemplo:</h3>
+                    <textarea class="full-width code"><div> <!-- El "div" es una etiqueta muy usada para crear cajas personalizadas, mediante #identificadores y .clases -->
+    <p>
+        Una <a href="#">extensión <strong>html</strong></a>.
+    </p>
+</div> <!-- El div que se abrió al principio, se cierra al final --></textarea>
+                <p>Si te trabaste, revisa este <a href="#">archivo comprimido zip</a> que te preparé. Recordá mantener una estructura de proyecto prolija. Yo suelo usar ésta:</p>
+                <ul class="table"><p>-- Carpeta raíz --</p>
+                    <li class="grid-2 gap prevent"><div>css/</div><div>(carpeta) Para los estilos</div></li>
+                    <li class="grid-2 gap prevent"><div>img/</div><div>(carpeta) Para las imágenes</div></li>
+                    <li class="grid-2 gap prevent"><div>test.html</div><div>(archivo) Mi página</div></li>
+                </ul>
+                <h3>El resultado del sitio que estamos armando</h3>
+                <img src="img/avance-sitio-web/sitio-web-1.png" width="100%" />
+                <p class="text-center"><i>Algo así debería ser el sitio web que estamos haciendo</i></p>
+                </div>
+            </div>
+            <!-- Módulo 6 -->
+            <div id="las-etiquetas-y-sus-parametros" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Las etiquetas y sus parámetros</h2>
+                </div>
+                <div>
+                    <p>La etiqueta de link, imágen, etc; no hacen nada por si solas. Todas las etiquetas pueden recibir parámetros, que son las palabras clave que están luego del nombre de la etiqueta en sí.</p>
+                    <h3>Ejemplo</h3>
+                    <textarea class="full-width code" style="min-height: 40px;"><img src="img/mi-imagen.jpg" width="100%" /></textarea>
+                    <p>La etiqueta <strong>img</strong> tiene, en este caso, dos parámetros:</p>
+                    <ul class="table">
+                        <li class="grid-2 gap"><div>src</div><div>La ruta a la imágen</div></li>
+                        <li class="grid-2 gap"><div>width</div><div>El ancho de la imágen. La altura se ajustará para mantener la proporción, sin deformaciones.</div></li>
+                    </ul>
+                    <p>Otros parámetros muy usados son <strong>href</strong> para referenciar una etiqueta HTML a algún link en particular, <strong>id</strong> y <strong>class</strong>.</p>
+                    <p>El id ya sabés como se usa. Mientras que el <strong>id</strong> lo usás para identificar elementos HTML, las clases se usan muchísimo para darle estilos a los objetos.</p>
+                    <p>Lo podés usar así:</p>
+                    <textarea class="full-width code"><style>
+    .italia {
+        color: green;
+        border-bottom: 2px dashed red;
+        font-style: italic;
+        text-align: center;
+    }
+</style>
+<p class="italia">Forza Italia</p></textarea>
+                    <p>La etiqueta <strong>style</strong> sirve para inyectar CSS puro dentro de un archivo HTML, aunque no es recomendable porque:</p>
+                    <ul>
+                        <li>Es complicado de leer en proyectos medianos y grandes.</li>
+                        <li>Suele ralentizar la carga del sitio, sobretodo si cargamos imágenes con la propiedad CSS <strong>background</strong>.</li>
+                    </ul>
+                    <p>Es muy común que escribas un ID o Clase específico para un objeto. Aunque a veces es necesario, hacer ésto en exceso complica la lectura del código en proyectos medianos y grandes. Bah, en chicos también :P</p>
+                    <p><a href="#pensemos-de-forma-modular">Así deberías estar pensando tu plantilla CSS</a>.</p>
+                </div>
+                <div class="las-etiquetas-y-sus-parametros"></div>
+            </div>
+            <!-- Módulo 7 -->
+            <div id="pensemos-de-forma-modular" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Pensemos de forma modular</h2>
+                </div>
+                <div class="pensemos-de-forma-modular"></div>
+                <div>
+                    <p>Suponete que estás creando un <strong>header</strong> para tu página. Querés que esté anclado arriba por más que hagas scroll, también querés un padding interno para que el texto no se pegue al borde de la pantalla.</p>
+                    <p>Pero también querés hacer un <strong>footer</strong> con propiedades muy similares, sólo que no querés que el footer se ancle a ningún lado. Con que esté al final de la página, nos basta.</p>
+                    <h3>Ejemplo de CSS</h3>
+                    <p>Así debería lucir tu CSS, si pensamos de forma modular.</p>
+                    <textarea class="full-width code">header, footer { /* Creamos las siguientes dos propiedades para dos objetos diferentes. ¿Se puede? Obvio */
+    background-color: #212121; /* #212121 es "casi" negro */
+    border-bottom: 1px solid #000; /* #000 es negro */
+    display: grid; /* La caja "toma forma de grilla" */
+    grid-template-columns: 1fr 1fr; /* Creamos una grilla de dos columnas. Cada columna mide una fracción del espacio que haya disponible a lo ancho */
+}
+header {
+    box-shadow: 0 0 5px #000; /* movimiento de sombra en X, mov. de sombra en Y, blur de sombra, color */
+    position: fixed;
+    top: 0;
+    left: 0;
+}</textarea>
+                <p>Esto está buenísimo, no sólo porque matás dos pájaros de un tiro, sino que acortás código y se vuelve más legible. Fijate que luego de declarar las propiedades de header y footer, escribo una propiedad (<strong>box-shadow</strong>) para darle sombra al header, y las próximas 3 líneas son para "<a class="tooltip" data-title="Anclar">fixear</a>" la cabeza de la página arriba, a pesar de que el usuario haga scroll.</p>
+                <p>¿Y que onda con el padding? ¡Ajá! El padding lo vamos a usar <strong>mucho</strong>, así que en vez de poner esa propiedad en todos los objetos que lo necesiten, voy a crear una clase CSS para eso.</p>
+                <textarea class="full-width code" style="min-height: 120px;">.padding {
+    padding: var(--gap);
+}</textarea>
+                <p>Esta clase la podés usar en cualquier objeto :)</p>
+                <h3>Ejemplo para usar una clase</h3>
+                <textarea class="full-width code" style="min-height: 40px;"><p class="padding">Esta clase la podés usar en cualquier objeto :)</p></textarea>
+                <p>¿Viste que escribí <strong>var(--gap)</strong> en el CSS? Las variables en CSS son algo de hace pocos años, y (creo) dejaron a Less y Stylus como una "simple opción más" de darle estilos al HTML.</p>
+                <p>De hecho, todos los que me dicen que el CSS debería estar extinto es porque no saben ni la mitad de cosas que ofrece esta especificación. Sin embargo, les sugiero no fanatizarse y luego de dominar CSS, revisar otras tecnologías. Si te gusta este mundo, seguramente te quieras comer todos los tutoriales :D</p>
+                <p>En fin, <a href="#variables-y-unidades">veamos las variables y unidades de CSS</a>.</p>
+                </div>
+            </div>
+            <!-- Módulo 8 -->
+            <div id="variables-y-unidades" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Variables y unidades</h2>
+                </div>
+                <div>
+                    <p>Las variables en CSS aportan a la modularidad y mantenibilidad (¿esa palabra existe?) del código. No sólo porque podemos hacer que todos los objetos referencien a un color determinado, de forma que si al cliente no le gusta ese tono de azúl (por ejemplo) lo cambiamos con una línea de código, sino también porque las variables en CSS pueden almacenar un sinfín de <a class="tooltip" data-title="Un tipo de dato es"><strong>tipos de datos</strong></a> distintos. Te listo algunos.</p>
+                    <ul class="table">
+                        <li class="grid-2 prevent gap"><div>px</div><div>Píxeles</div></li>
+                        <li class="grid-2 prevent gap"><div>em</div><div>1.6em = 1px</div></li>
+                        <li class="grid-2 prevent gap"><div>vw ó vh</div><div><a class="tooltip" data-title="Viewport Width o Ancho de la vista. 100vw es todo el ancho de la ventana, y es un valor que puede ir del 0 al 100">Viewport width</a> ó <a class="tooltip" data-title="Viewport Height o Alto de la vista. 100vh es todo el alto de la ventana, y es un valor que puede ir del 0 al 100">Viewport height</a></div></li>
+                        <li class="grid-2 prevent gap"><div>Color hexadecimal</div><div>Colores de 6 caracteres</div></li>
+                        <li class="grid-2 prevent gap"><div>Color rgb ó rgba</div><div>Colores que podés manejar <a class="tooltip" data-title="El canal rojo, verde y azúl (RGB), además de poder cambiar la transparencia (canal alpha) en el rgba">cambiando canales</a></div></li>
+                    </ul>
+                    <p>Así que si quisieras guardar unas variables, deberías hacerlo dentro del <a class="tooltip" data-title='Todo lo que tenga dos puntos en el CSS es un selector. Sirve para marcar eventos, por ejemplo "a:hover" sirve para aplicar estilos al link cuándo se pasa el cursor por encima'>selector</a> <strong>:root</strong>, así:</p>
+                    <textarea class="full-width code">:root {
+    --white: rgb(245, 245, 245);
+    --grey: rgb(100, 100, 100);
+    --black: #212121;
+    --black-transparent: rgba(0, 0, 0, 0.8);
+    --skyblue: rgb(27, 139, 214);
+    --blue: rgb(27, 80, 255);
+    --gap: 20px;
+}</textarea>
+                <p>Las variables se crean con dos guiones medios y su nombre. Luego dos puntos y el valor que tiene que almacenar :)</p>
+                <p>Para usar ese valor, llamamos al <a class="tooltip" data-title="Un procedimiento es una porción de código que ejecuta una acción, como por ej. procesar algún dato de un programa">procedimiento</a> <strong>var()</strong>, así:</p>
+                <textarea class="full-width code">a { /* Supongamos que quiero cambiar el estilo de los links */
+    color: var(--blue);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--skyblue);
+}</textarea>
+                </div>
+                <div class="variables-y-unidades"></div>
+            </div>
+        </article>  <!-- !Article-->
+        <!-- !Root -->
+    </div>
+</body>
+</html>

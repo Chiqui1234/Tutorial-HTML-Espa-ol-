@@ -1,0 +1,12 @@
+#tituloPrincipal {
+    font-size: 28px; /* Tamaño de la tipografía */
+    color: blue; /* Color de la tipografía */
+    padding-bottom: 2px; /* Espacio entre la parte inferior de las letras y el borde inferior de la caja */
+    border-bottom: 2px solid blue; /* Borde inferior, estará debajo del texto */
+}
+#queEsUnLaEtiquetaDeParrafo {
+    font-style: italic; /* 'italic' pone la fuente en cursiva */
+}
+#tamanosParaTitulos {
+    font-style: bold; /* 'bold' pone la tipografía en negrita */
+}

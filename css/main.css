@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Variables */
+:root {
+    --white: rgb(245, 245, 245);
+    --grey: rgb(100, 100, 100);
+    --black: #212121;
+    --black-transparent: rgba(0, 0, 0, 0.8);
+    --skyblue: rgb(27, 139, 214);
+    --blue: rgb(27, 80, 255);
+    --gap: 20px;
+}
+/* Body */
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+#root {
+    width: 100%;
+}
+article {
+    width: 95%;
+    margin: 0 auto;
+}
+/* Links */
+a {
+    color: var(--skyblue);
+    border-bottom: 2px solid var(--skyblue);
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue);
+    text-decoration: none;
+}
+a.tooltip {
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+a.tooltip:hover {
+    color: var(--skyblue);
+    border-bottom: 2px solid var(--skyblue);
+    text-decoration: none;
+}
+/* Text */
+p {
+    line-height: 32px;
+}
+.text-center {
+    text-align: center;
+}
+/* Lists */
+ul.table li:nth-child(odd) { background: #eee; }
+/* Dimensions */
+.full-width {
+    width: 100%;
+}
+/* Grid */
+.grid, .grid-2, .grid-3, .grid-4, .grid-6, .grid-8 {
+    display: grid;
+}
+.grid-2.gap, .grid-3.gap, .grid-4.gap, .grid-6.gap, .grid-8.gap {
+    gap: var(--gap);
+}
+.grid-2 {grid-template-columns: repeat(2, 1fr);}
+.grid-2 .full-width {grid-column: 1 / span 2;}
+.grid-3 {grid-template-columns: repeat(3, 1fr);}
+.grid-4 {grid-template-columns: repeat(4, 1fr);}
+.grid-6 {grid-template-columns: repeat(6, 1fr);}
+.grid-8 {grid-template-columns: repeat(8, 1fr);}
+@media (max-width: 1024px) {
+    .grid-2 {grid-template-columns: 100%;}
+    .grid-2.prevent {grid-template-columns: repeat(2, 1fr);}
+    .grid-2 .full-width {grid-column: 1;}
+}
+/* Margin */
+.margin {
+    margin: var(--gap);
+}
+.margin-top {
+    margin-top: var(--gap);
+}
+/* Textarea */
+textarea.code {
+    min-height: 200px;
+    background: var(--grey);
+    /* outline: none; */
+    /* border: none; */
+    color: var(--white);
+    padding: var(--gap);
+}
+/* Tooltip */
+.tooltip[data-title]:hover:before {
+    content: attr(data-title);
+    position: absolute;
+    margin-top: -5%;
+    color: var(--black);
+    background: rgba(235, 235, 235, 0.9); /* --white-transparent with less opacity */
+    font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: var(--gap);
+    box-shadow: 0 0 10px var(--black-transparent);
+    z-index: 99;
+}
+/* Article */
+.separator {
+    padding: var(--gap) 0 var(--gap) 0;
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+}
+/* Custom */
+#first {
+    width: 100%;
+    height: 50vh;
+    background: url('../img/first.jpg') center center;
+    background-size: cover;
+}
+.que-es-html {
+    background: url('../img/html-code-0.jpg') no-repeat center center;
+}
+.como-se-disena {
+    background: url('../img/website-design.jpg') no-repeat center center;
+}
+.apliquemos-estilos {
+    background: url('../img/css.png') no-repeat center center;
+}
+.cajas-comunes-y-bloques {
+    background: url('../img/html-basico.jpg') no-repeat center center;
+}
+.ensamblemos-todo {
+    background: url('../img/website-construction.jpg') no-repeat center center;
+}
+.las-etiquetas-y-sus-parametros {
+    background: url('../img/html-fanart-logo.jpg') no-repeat center center;
+}
+.pensemos-de-forma-modular {
+    background: url('../img/modular.jpg') no-repeat center center;
+}
+.variables-y-unidades {
+    background: url('../img/website-redesign.jpg') no-repeat center center;
+}
