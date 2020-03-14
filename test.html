@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="css/test.css"> <!-- Guarda tu CSS en la carpeta "CSS", para emprolijar tu proyecto y que no haya archivos sueltos -->
 </head>
 <body>
-    <input type="number" id="a1" placeholder="Digita un número"><br />
-    <input type="number" id="b1" placeholder="Digita un número"><br />
-    <input type="button" onclick="calc()" value="Calcular suma">
+    <input type="button" onclick="run()" value="Correr">
 <script>
-    function calc() {
-        const   a1 = parseInt(document.getElementById('a1').value),
-                b1 = parseInt(document.getElementById('b1').value);
-        console.log(a1+b1);
-        console.log(document.getElementById('a1'));
+    let rain = false; // También existen variables verdadero/falso.
+    function run() {
+        let i = 0;
+        while(!rain && i < 20) { // '!lluvia' es lo mismo que comprobar que 'rain == false'
+            console.log('Vamos por la vuelta', i+1);
+            i++;
+        }
+        if(rain) // Comprobamos que esté lloviendo. Cuándo la instrucción siguiente al if/for/while es una única línea, podemos evitar las llaves de apertura y cierre
+            console.log('Está lloviendo');
     }
 </script>
 </body>

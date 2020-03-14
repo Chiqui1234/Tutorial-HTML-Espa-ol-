@@ -1,0 +1,15 @@
+Request
+GET 	https://www.bitstamp.net/api/ticker/
+  	Returns data for the BTC/USD currency pair.
+GET 	https://www.bitstamp.net/api/v2/ticker/{currency_pair}	/API v2
+  	Supported values for currency_pair: btcusd, btceur, eurusd, xrpusd, xrpeur, xrpbtc, ltcusd, ltceur, ltcbtc, ethusd, etheur, ethbtc, bchusd, bcheur, bchbtc
+Response (JSON)
+last 	Last BTC price.
+high 	Last 24 hours price high.
+low 	Last 24 hours price low.
+vwap 	Last 24 hours volume weighted average price.
+volume 	Last 24 hours volume.
+bid 	Highest buy order.
+ask 	Lowest sell order.
+timestamp 	Unix timestamp date and time.
+open 	

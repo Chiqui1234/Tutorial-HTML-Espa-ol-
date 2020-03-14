@@ -318,7 +318,8 @@ function calc() { // ¡Mirá! Esto es un comentario en Javascript
                 </div>
                 <div>
                     <p>Javascript hizo un avance grande en poner los objetos como algo del día a día. Es algo que ya se veía venir con las estructuras de datos de lenguajes viejísimos como C.</p>
-                    <p>Suponete que querés re-crear a tu mascota en Javascript, como un objeto. Probablemente tu perro, gato, etc; sea mucho más que un objeto, pero en Javascript así se denominan. Si tuviera que crear un objeto de mi gata, sería algo así:</p>
+                    <p>Suponete que querés re-crear a tu mascota en Javascript, como un objeto. Probablemente tu perro, gato, etc; sea mucho más que un objeto, pero en Javascript así se denominan. Si tuviera que crear un objeto de mi gata, sería algo así</p>
+                    <h3><a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Ejemplo</a></h3>
                     <textarea class="full-width code">let gata = {
     // Las propiedades/keys (del lado izquierdo) no pueden tener espacios, símbolos ni tildes. Los valores/datos (del lado derecho) pueden contener cualquier caracter, siempre y cuándo esté entre comillas.
     name: 'Lilo',
@@ -391,7 +392,7 @@ console.log(gata);</textarea>
                     <textarea class="full-width code">wasd</textarea>
                     <p>Instalá el plugin de Vue.Js para <a href="#">Firefox</a> o <a href="#">Chrome</a>, de forma tal que puedas acceder a tu aplicación Vue.js de forma más conveniente, desde una pestaña de las Herramientas de Desarrollador (apretando F12).</p>
                     <p>Una vez que tengas Vue.js y Axios entre tus etiquetas head, podés instanciar Vue en una variable o constante, y luego pasarle un objeto como parámetro.</p>
-                    <h3>Ejemplo</h3>
+                    <h3><a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Ejemplo</a></h3>
                     <textarea class="full-width code">let bitcoinApp = new Vue(
     {   // Acá comienza el objeto
         el: '#bitcoinApp', // 'el' es el elemento HTML que accederá a 'data'
@@ -417,9 +418,130 @@ console.log(gata);</textarea>
                     <p>Hace mucho tiempo que perdió (algo) de importancia el hecho de "sé desarrollar cualquier cosa y lo voy a hacer". Ahora es más importante hacer software rápido, así que si hay una <a class="tooltip" data-title='Una API es, básicamente, una "DB as a service".'>API</a> gratis y te conviene, ¡usala!</p>
                     <hr>
                     <p>Consumir datos con Vue.js y <strong>Axios</strong> es muy fácil. Se trata de que Axios haga una llamada AJAX a una <a class="tooltip" data-title="Una URL es una dirección web">URL</a> y recopile toda la información.</p>
-                    <p>Vamos a usar la API pública de Bitstamp, para saber el precio del Bitcoin actualmente.</p>
+                    <p>Vamos a usar la <a href="https://www.bitstamp.net/api/">API pública de Bitstamp</a>, para saber el precio del Bitcoin actualmente.</p>
+                    <p>Podemos hacer un pedido a la siguiente URL para saber el precio del Bitcoin: <a href="https://www.bitstamp.net/api/v2/ticker/btcusd">https://www.bitstamp.net/api/v2/ticker/btcusd</a>. Fijate el link a la API que dejé en el párrafo de arriba, porque hay mucha más información que te puede dar Bitstamp.</p>
+                    <p>El código que hace la llamada a esa dirección es el siguiente:</p>
+                    <textarea class="full-width code">axios.get('https://www.bitstamp.net/api/v2/ticker/btcusd')
+.then(response => {
+    console.log(response.data);
+});</textarea>
+                <p>Ésto tenés que ponerlo dentro del objeto <strong>methods {}</strong>, y utilizar la función <strong>created()</strong> para ejecutar la función apenas se cree la instancia Vue.js.</p>
+                <textarea class="full-width code">let bitcoinApp = new Vue(
+{   // Acá comienza el objeto
+    el: '#bitcoinApp', // 'el' es el elemento HTML que accederá a 'data'
+    data: { // 'data' es un objeto dentro del objeto de Vue, ¿que loco, no? :D
+        btcData: {} // Creo este objeto vacío para llenarlo después
+    },
+    methods: { // Acá puedo escribir funciones/métodos
+        axios.get('https://www.bitstamp.net/api/v2/ticker/btcusd')
+        .then(response => {
+            console.log(response.data);
+        });
+    },
+    delimiters: ['__', '__'] // Esta propiedad me permite indicar con qué símbolos acceder a la información de 'data'. Después lo explico mejor :)
+}   // Acá finaliza el objeto
+);</textarea>
+                <p>Pero hay un problema. La respuesta (response.data) tendría que guardarse en <strong>btcData</strong>. Sabiendo que a btcData accedés desde el método con <strong>this.btcData</strong>, te invito a arreglartelas para que hagas un console.log(btcData) y puedas ver la información que obtuviste desde la API.</p>
                 </div>
                 <div class="consumir-datos-de-otra-web"></div>
+            </div>
+            <!-- Módulo 16 -->
+            <div id="acceder-a-los-datos-de-vue-js" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Acceder a los datos de Vue.js</h2>
+                </div>
+                <div class="acceder-a-los-datos-de-vue-js"></div>
+                <div>
+                    <p>Si llegaste acá, supongo que ya podés ver un <strong>btcData</strong> rico en contenido desde tu inspector Vue (plugin). Ahora resta acceder a este contenido y nada más.</p>
+                    <p>¿Te acordás de la propiedad <strong>delimiters</strong> que tenía dos guiones bajos? Esos dos guiones bajos los uso para que no tener conflicos con Handlebars, un motor de plantillas que uso cuándo programo en NodeJs. Entonces, esos guiones bajos los uso como apertura y cierre de "las etiquetas de Vue.js".</p>
+                    <p>Si quería acceder a btcData.last (el último precio de Bitcoin), originalmente (si no escribiera la propiedad <strong>delimiters</strong>) lo haría así:</p>
+                    <textarea class="full-width code" style="min-height: 40px;">{{ btcData.last }}</textarea>
+                    <p>Pero ahora lo hago así: </p>
+                    <textarea class="full-width code" style="min-height: 40px;">__ btcData.last __</textarea>
+                    <p>Vos hacelo "por defecto" o cómo lo hago yo, realmente no te cambia en nada, salvo que las llaves te hagan conflicto con otra cosa (en mi caso, Express Handlebars).</p>
+                    <p>¡Ojo! Vas a poder acceder desde btcData exclusivamente desde la etiqueta HTML identificada como "bitcoinApp". Hasta dónde sé, no se pueden compartir variables entre distintas instancias Vue.js ni identificadores, salvo que crees una variable en Javascript y luego te referencies a ella desde cada instancia Vue (por separado).</p>
+                    <h3>Ejemplo</h3>
+                    <textarea class="full-width code"><script>
+    const usuarios = [{ // ¿Un array que tiene objetos adentro? Tranqui, ya lo vemos
+        user1: {
+            nick: 'pepito',
+            email: 'aguante@outlook.com.ar'
+        },
+        user2: {
+            nick: 'leia',
+            email: 'lolcito@outlook.com.ar'
+        }
+    }];
+    let ejemploVue = new Vue({
+        el: '#ejemplo',
+        data: {
+            users: usuarios // 'usuarios' es una referencia a la constante creada con javascript puro
+        }
+    });
+</script></textarea>
+                <p>Este ejemplo, igualmente, no lo recomiendo. Pero cada quién...</p>
+                </div>
+            </div>
+            <!-- Módulo 17 -->
+            <div id="arrays" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Arrays</h2>
+                </div>
+                <div>
+                    <p>Los arrays/vectores/arreglos (es lo mismo, dicho en distintos idiomas) son bloques en memoria, y pueden almacenar el mismo tipo de dato que la variable/constante "original".</p>
+                    <p>En C y derivados, se necesita especificar el tipo de dato de las variables, constantes, vectores y matrices; debido a que es un lenguaje "fuertemente tipado".</p>
+                    <h3>Ejemplo</h3>
+                    <textarea class="full-width code" style="min-height: 40px;">int numeritos[10] = {0}; // Crea un vector de 10 espacios. Cada espacio vale cero.</textarea>
+                    <p>Sin embargo, javascript no es un lenguaje fuertemente tipado, por lo cual una variable puede contener un string (texto) y luego un número. <a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Hacé la prueba</a>:</p>
+                    <textarea class="full-width code">let ejemplo = '¡Hola!';
+ejemplo = 100;
+ejemplo = '¡Hola! x' + 100;
+ejemplo = '10' + '10';</textarea>
+                    <p>Entonces un array de Javascript lo definimos así:</p>
+                    <textarea class="full-width code" style="min-height: 40px;">let vector = [];</textarea>
+                    <p>A los vectores, podemos acceder con un subíndice, así:</p>
+                    <textarea class="full-width code" style="min-height: 40px;">console.log(vector[0]); // Si, en todos los lenguajes de computación se comienza en el subíndice/espacio cero.
+console.log(vector[1]);</textarea>
+                    <hr>
+                    <p>Es muy común que necesitemos añadir "celdas" a un vector. Podemos utilizar <strong>push()</strong>.</p>
+                    <textarea class="full-width code" style="min-height: 40px;">vector.push(25*20);</textarea>
+                    <p>También podemos pushear un objeto dentro de ese espacio:</p>
+                    <textarea class="full-width code" style="min-height: 40px;">vector.push({
+                        name: 'pepito',
+                        email: 'aguante@outlook.com.ar'
+                    });</textarea>
+                    <p>Veamos <a href="#iteremos">qué son los iteradores</a>.</p>
+                </div>
+                <div class="arrays"></div>
+            </div>
+            <!-- Módulo 18 -->
+            <div id="iteremos" class="grid-2 gap margin-top">
+                <div class="full-width separator text-center">
+                    <h2>Iteremos</h2>
+                </div>
+                <div class="iteremos"></div>
+                <div>
+                    <p>Los bucles son como tener una carrera con varias vueltas. La carrera puede parar después de 20 vueltas (se sabe cuándo termina) o en caso de que llueva (no se sabe exactamente cuándo termina).</p>
+                    <p>Para el primer caso, tenemos los bucles <strong>for()</strong>, mirá:</p>
+                    <textarea class="full-width code">for(let i = 0;i < cantVueltas;i++) // Creo la variable i; mientras i sea menor a cantVueltas; sumo +1 a la i
+    console.log('Vamos por la vuelta', i+1);</textarea>
+                    <p>El bucle <strong>while()</strong> se encarga de iterar <strong>mientras</strong> la condición que esté evaluando sea verdadera. Básicamente, el while() es un if pero que se repite <strong>n veces</strong>.</p>
+                    <h3><a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Ejemplo</a></h3>
+                    <textarea class="full-width code"><input type="button" onclick="run()" value="Correr">
+<script>
+    let rain = false; // También existen variables verdadero/falso.
+    function run() {
+        let i = 0;
+        while(!rain && i < 20) { // '!lluvia' es lo mismo que comprobar que 'rain == false'
+            console.log('Vamos por la vuelta', i+1);
+            i++;
+        }
+        if(rain) // Comprobamos que esté lloviendo. Cuándo la instrucción siguiente al if/for/while es una única línea, podemos evitar las llaves de apertura y cierre
+            console.log('Está lloviendo');
+    }
+</script></textarea>
+                <p>Simulá que sos el inspector de la carrera y ponés <strong>rain = false</strong>, desde la Consola en Herramientas del desarrollador (Firefox/Chrome).</p>
+                </div>
             </div>
             <!-- Módulo N -->
             <div id="aprendamos-nodejs" class="grid-2 gap margin-top">

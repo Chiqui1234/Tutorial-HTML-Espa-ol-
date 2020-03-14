@@ -169,9 +169,12 @@ textarea.code {
 .consumir-datos-de-otra-web {
     background: url('../img/website-idea.jpg') no-repeat center center;
 }
+.acceder-a-los-datos-de-vue-js {
+    background: url('../img/como-hacer-web-portrait.png') no-repeat center center;
+}
 .aprendamos-nodejs {
     background: url('../img/admin-mongo.webp') no-repeat center center;
 }
-.que-es-html, .como-se-disena, .apliquemos-estilos, .cajas-comunes-y-bloques, .ensamblemos-todo, .las-etiquetas-y-sus-parametros, .pensemos-de-forma-modular, .variables-y-unidades, .el-servidor, .objetos, .el-dinamismo, .no-vamos-a-aprender-jquery, .consumir-datos-de-otra-web, .aprendamos-nodejs {
+.que-es-html, .como-se-disena, .apliquemos-estilos, .cajas-comunes-y-bloques, .ensamblemos-todo, .las-etiquetas-y-sus-parametros, .pensemos-de-forma-modular, .variables-y-unidades, .el-servidor, .objetos, .el-dinamismo, .no-vamos-a-aprender-jquery, .consumir-datos-de-otra-web, .acceder-a-los-datos-de-vue-js, .aprendamos-nodejs {
     background-size: 100%;
 }
