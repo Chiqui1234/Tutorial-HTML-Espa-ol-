@@ -344,11 +344,20 @@ console.log(gata);</textarea>
                     <p>Bueno, el objeto <strong>document</strong> es igual de fácil. Javascript tiene procedimientos nativos para hacerte la vida más fácil. En los objetos podés almacenar <a class="tooltip" data-title='Acordate que las funciones se escriben: miFuncion(parametro1, parametro2, etc)'>funciones</a> dentro, además de simples nombres, tamaños y edades.</p>
                     <p>La función <strong>getElementById()</strong> recibe un string como parámetro, y te devuelve un dato. Ese dato que "sale" de la función la podemos almacenar en una variable, como había hecho en el módulo anterior con <strong>a1</strong> y <strong>b1</strong>. Si no guardamos la devolución de una función, ese dato quedará en el abismo...</p>
                     <p>Fijate que la función <strong>getElementById()</strong>, obtiene el ID completo, osea que los parámetros HTML cómo <a class="tooltip" data-title="href, src, etc">los que mencionaba antes</a> están a completa disposición.</p>
-                    <p>Probá de obtener una etiqueta de imágen, asignando un ID desde el HTML y obteniendolo con Javascript. ¡Después hacé un console.log de eso y mirá lo que te encontrás!</p>
+                    <p>Probá de obtener una etiqueta, asignando un ID desde el HTML y obteniendolo con Javascript. ¡Después hacé un console.log de eso y mirá lo que te encontrás!</p>
                     <p>Yo hice esa prueba con el input a1 del capítulo anterior, así:</p>
                     <textarea class="full-width code" style="min-height: 40px;">console.log(document.getElementById('a1'));</textarea>
-                    <p>Obtuve buena data, a la que puedo acceder "con puntitos" después:</p>
+                    <p>Obtuve ésto:</p>
                     <img src="img/avance-sitio-web/obtener-input.png" alt="">
+                    <p>Cada parámetro en esa etiqueta puede ser obtenida con Javascript. Si seguimos con el concepto de "todo es un objeto", nos daremos cuenta que JS trata ese input así:</p>
+                    <textarea class="full-width code">a1 = {
+    id: 'a1',
+    type: 'number',
+    placeholder: 'Digita un número'
+};</textarea>
+                    <p>Por lo cuál, podemos obtener el ID (por dar un ejemplo) e imprimirlo por la consola de nuestro navegador de la siguiente forma:</p>
+                    <textarea class="full-width code">console.log(document.getElementById('a1').id);</textarea>
+                    <p>¿Te aburre un poco imprimir todo por consola? Dentro de poco vamos a hacerlo con Vue.js y de forma reactiva, por lo que quiero enseñarte la base de Javascript para saltar directo a Vue :)</p>
                 </div>
                 <div class="objetos"></div>
             </div>
@@ -359,7 +368,7 @@ console.log(gata);</textarea>
                 </div>
                 <div class="en-runtime"></div>
                 <div>
-                    <p>Si tengo suerte, seguramente te preguntaste porqué la calculadora que programé antes tiene dos constantes y cómo hago para "editar" estos valores, ya que puedo cambiar los números de los <strong>input:number</strong> y de hecho esos valores se ven en las constantes <strong>a1</strong> y <strong>b1</strong>.</p>
+                    <p>Si tengo suerte, seguramente te preguntaste porqué la calculadora que programé antes tiene dos constantes y cómo hago para "editar" estos valores, ya que puedo cambiar los números de los <strong>input:number</strong> y de hecho esos valores se ven en las constantes <strong>a1</strong> y <strong>b1</strong>. ¿No era que las constantes nunca cambian?</p>
                     <p>En realidad, esos valores nunca se editan :O El tema está en que toda la información que almacena una función internamente <strong>se destruye</strong> al finalizar. Osea que luego de que Javascript ejecutó la última línea de mi función <strong>calc()</strong>, las constantes y la función en sí desaparecieron de la memoria de nuestro sistema.</p>
                     <p>Por ende, la próxima vez que se llame a la función, se crearán nuevas constantes con los datos que contengan a1 y b1, por lo que nunca hay una edición, sino que se destruyen al finalizar las órdenes y se crean nuevas constantes al re-llamar la función. It's magic!</p>
                     <p>Esto que digo <strong>es vital</strong> para entender un poquito más el <a class="tooltip" data-title='El scope de un dato o método (variable/constante o función, respectivamente) es desde qué partes del código se pueden acceder a otras y cuales no.'><strong>scope</strong></a> en los lenguajes de programación.</p>
@@ -438,12 +447,17 @@ console.log(gata);</textarea>
             console.log(response.data);
         });
     },
-    delimiters: ['__', '__'] // Esta propiedad me permite indicar con qué símbolos acceder a la información de 'data'. Después lo explico mejor :)
+    delimiters: ['__', '__'] // Esta propiedad me permite indicar con qué símbolos acceder a la información de 'data'. Son cómo los picos de apertura y cierre de HTML, sólo que yo los reemplazo por dos guiones bajos (para evitar confusión)
 }   // Acá finaliza el objeto
 );</textarea>
                 <p>Pero hay un problema. La respuesta (response.data) tendría que guardarse en <strong>btcData</strong>. Sabiendo que a btcData accedés desde el método con <strong>this.btcData</strong>, te invito a arreglartelas para que hagas un console.log(btcData) y puedas ver la información que obtuviste desde la API.</p>
                 </div>
                 <div class="consumir-datos-de-otra-web"></div>
+            </div>
+            <!-- Ejercicio 15 -->
+            <div id="ejercicio-consumir-datos-de-otra-web" class="grid background-teal margin-top">
+                <h2 class="text-center">Ejercicio: Consumir datos de otra web</h2>
+                <p class="padding">El módulo 15 que expliqué recién, tiene un problema. La respuesta (response.data) tendría que guardarse en <strong>btcData</strong>. Sabiendo que a btcData accedés escribiendo <strong>this.btcData</strong>, hacé un console.log() para ver la información obtenida desde la API.</p>
             </div>
             <!-- Módulo 16 -->
             <div id="acceder-a-los-datos-de-vue-js" class="grid-2 gap margin-top">
@@ -488,10 +502,16 @@ console.log(gata);</textarea>
                     <h2>Arrays</h2>
                 </div>
                 <div>
-                    <p>Los arrays/vectores/arreglos (es lo mismo, dicho en distintos idiomas) son bloques en memoria, y pueden almacenar el mismo tipo de dato que la variable/constante "original".</p>
-                    <p>En C y derivados, se necesita especificar el tipo de dato de las variables, constantes, vectores y matrices; debido a que es un lenguaje "fuertemente tipado".</p>
+                    <p>Los arrays/vectores/arreglos (es lo mismo, dicho en distintos idiomas) son bloques en memoria. Pueden tener varias celdas, dentro de cada celda hay o podría haber información.</p>
                     <h3>Ejemplo</h3>
+                    <p>Supongamos que tenemos un array de 3 posiciones o "celdas" que contienen un dato u objeto.</p>
+                    <p>¡Es tiempo de una analogía! Ahora imaginate 3 Mamushkas, que dentro tienen un papelito escrito (dato), u otra mamushka (objeto).</p>
+                    <p><strong>Fin</strong> :O</p>
+                    <hr>
+                    <p>En C y derivados, se necesita especificar el tipo de dato de las variables, constantes, vectores y matrices; debido a que es un lenguaje "fuertemente tipado".</p>
+                    <h3>Ejemplo en lenguaje C/C++</h3>
                     <textarea class="full-width code" style="min-height: 40px;">int numeritos[10] = {0}; // Crea un vector de 10 espacios. Cada espacio vale cero.</textarea>
+                    <hr>
                     <p>Sin embargo, javascript no es un lenguaje fuertemente tipado, por lo cual una variable puede contener un string (texto) y luego un número. <a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Hacé la prueba</a>:</p>
                     <textarea class="full-width code">let ejemplo = '¡Hola!';
 ejemplo = 100;
@@ -500,13 +520,13 @@ ejemplo = '10' + '10';</textarea>
                     <p>Entonces un array de Javascript lo definimos así:</p>
                     <textarea class="full-width code" style="min-height: 40px;">let vector = [];</textarea>
                     <p>A los vectores, podemos acceder con un subíndice, así:</p>
-                    <textarea class="full-width code" style="min-height: 40px;">console.log(vector[0]); // Si, en todos los lenguajes de computación se comienza en el subíndice/espacio cero.
-console.log(vector[1]);</textarea>
+                    <textarea class="full-width code" style="min-height: 40px;">console.log(miVector[0]); // Si, en todos los lenguajes de computación se comienza en el subíndice/espacio cero.
+console.log(miVector[1]); // Podemos acceder al espacio 1 si existe, y los siguientes...</textarea>
                     <hr>
-                    <p>Es muy común que necesitemos añadir "celdas" a un vector. Podemos utilizar <strong>push()</strong>.</p>
-                    <textarea class="full-width code" style="min-height: 40px;">vector.push(25*20);</textarea>
+                    <p>Es muy común que necesitemos añadir celdas/espacios/bloques a un vector. Podemos utilizar <strong>push()</strong>.</p>
+                    <textarea class="full-width code" style="min-height: 40px;">miVector.push(25*20);</textarea>
                     <p>También podemos pushear un objeto dentro de ese espacio:</p>
-                    <textarea class="full-width code" style="min-height: 40px;">vector.push({
+                    <textarea class="full-width code" style="min-height: 40px;">miVector.push({
                         name: 'pepito',
                         email: 'aguante@outlook.com.ar'
                     });</textarea>
@@ -523,16 +543,16 @@ console.log(vector[1]);</textarea>
                 <div>
                     <p>Los bucles son como tener una carrera con varias vueltas. La carrera puede parar después de 20 vueltas (se sabe cuándo termina) o en caso de que llueva (no se sabe exactamente cuándo termina).</p>
                     <p>Para el primer caso, tenemos los bucles <strong>for()</strong>, mirá:</p>
-                    <textarea class="full-width code">for(let i = 0;i < cantVueltas;i++) // Creo la variable i; mientras i sea menor a cantVueltas; sumo +1 a la i
+                    <textarea class="full-width code">for(let i = 0;i < cantVueltas;i++) // Lo que hago es: Creo la variable i; mientras i sea menor a cantVueltas; sumo +1 a la i
     console.log('Vamos por la vuelta', i+1);</textarea>
                     <p>El bucle <strong>while()</strong> se encarga de iterar <strong>mientras</strong> la condición que esté evaluando sea verdadera. Básicamente, el while() es un if pero que se repite <strong>n veces</strong>.</p>
                     <h3><a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Ejemplo</a></h3>
-                    <textarea class="full-width code"><input type="button" onclick="run()" value="Correr">
+                    <textarea class="full-width code"><input type="button" onclick="run()" value="Correr"> <!-- onclick sirve para llamar funciones javascript cuándo se detecta un clic encima de un elemento HTML -->
 <script>
     let rain = false; // También existen variables verdadero/falso.
     function run() {
         let i = 0;
-        while(!rain && i < 20) { // '!lluvia' es lo mismo que comprobar que 'rain == false'
+        while(!rain && i < 20) { // '!rain' es lo mismo que comprobar que 'rain == false'
             console.log('Vamos por la vuelta', i+1);
             i++;
         }

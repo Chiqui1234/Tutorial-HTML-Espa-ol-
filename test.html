@@ -7,18 +7,9 @@
     <link rel="stylesheet" href="css/test.css"> <!-- Guarda tu CSS en la carpeta "CSS", para emprolijar tu proyecto y que no haya archivos sueltos -->
 </head>
 <body>
-    <input type="button" onclick="run()" value="Correr">
+    <input type="button" onclick="run()" id="a1" value="Correr">
 <script>
-    let rain = false; // También existen variables verdadero/falso.
-    function run() {
-        let i = 0;
-        while(!rain && i < 20) { // '!lluvia' es lo mismo que comprobar que 'rain == false'
-            console.log('Vamos por la vuelta', i+1);
-            i++;
-        }
-        if(rain) // Comprobamos que esté lloviendo. Cuándo la instrucción siguiente al if/for/while es una única línea, podemos evitar las llaves de apertura y cierre
-            console.log('Está lloviendo');
-    }
+    console.log(document.getElementById('a1').onclick);
 </script>
 </body>
 </html>
