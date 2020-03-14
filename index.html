@@ -356,7 +356,22 @@ console.log(gata);</textarea>
     placeholder: 'Digita un número'
 };</textarea>
                     <p>Por lo cuál, podemos obtener el ID (por dar un ejemplo) e imprimirlo por la consola de nuestro navegador de la siguiente forma:</p>
-                    <textarea class="full-width code">console.log(document.getElementById('a1').id);</textarea>
+                    <textarea class="full-width code" style="min-height: 40px;">console.log(document.getElementById('a1').id);</textarea>
+                    <p>Volviendo al tema anterior, es muy común almacenar la devolución (return) de una función en una variable. Esto se suele hacer cuándo este dato recibido se va a procesar más tarde.</p>
+                    <h3>Ejemplo</h3>
+                    <textarea class="full-width code">function validarNombre(nombre) { // 'nombre' es válido si tiene más de dos caracteres
+    if(nombre.length > 2)
+        return true; // Sale de la función devolviendo 'true'
+    return false; // Si no salió de la función porque el if es falso, la función se cierra devolviendo 'false'
+}
+let nombre = prompt('Escribí tu nombre'); // prompt() sirve para pedir un dato por pantalla
+let nombreValido = validarNombre(nombre); // Le pasamos el contenido de 'tuNombre' a la función 'validarNombre'
+if(nombreValido) { // Si 'nombreValido' es true
+    alert('¡Bien! Tu nombre', nombre, 'es válido.');
+} else {
+    alert('Tu nombre no es válido :(');
+}
+                    </textarea>
                     <p>¿Te aburre un poco imprimir todo por consola? Dentro de poco vamos a hacerlo con Vue.js y de forma reactiva, por lo que quiero enseñarte la base de Javascript para saltar directo a Vue :)</p>
                 </div>
                 <div class="objetos"></div>
@@ -376,6 +391,16 @@ console.log(gata);</textarea>
                     <p>A veces utilizo constantes cómo parte de la "programación defensiva", un TOC que me dio un profesor de tanto que insistió.</p>
                     <p>Evita la edición de un dato que no debería cambiar en runtime, en el hipotético caso de que lo haga sin querer :P</p>
                     <p>La imágen que acompaña este título explica más o menos bien lo que sería un desperdicio de memoria. En <a class="tooltip" data-title="C y C++ son lenguajes de programación de bajo y medio nivel respectivamente, algo más difíciles de programar en comparación con Javascript, Java y Python">C y C++</a> uno puede pedir un espacio de memoria dentro de una función que, si no se maneja correctamente, no se destruye luego de finalizar la función.</p>
+                    <hr>
+                    <p>Otra cosa que tienen que ver con las funciones es que al declararla, por ejemplo:</p>
+                    <textarea class="full-width code">function validarPersona(nombre, apellido) {
+    if(nombre.length > 2 && apellido.length > 3)
+        return true;
+    return false;
+}</textarea>
+                <p>Se espera que los parámetros <strong>nombre</strong> y <strong>apellido</strong> se envíen en órden, al llamar a la función así:</p>
+                <textarea class="full-width code" style="min-height: 40px;">validarPersona('Rodrigo', 'Benelli');</textarea>
+                <p>Además, tené en cuenta que <strong>return</strong> le da la posibilidad a la función de devolver un dato, pero también <strong>la finaliza</strong>, por lo cuál es recomendable disponer los return como hice en el ejemplo anterior. No hay necesidad de englobar <strong>return false;</strong> dentro de un condicional <strong>else</strong>.</p>
                 </div>
             </div>
             <!-- Módulo 13 -->
@@ -434,18 +459,23 @@ console.log(gata);</textarea>
 .then(response => {
     console.log(response.data);
 });</textarea>
-                <p>Ésto tenés que ponerlo dentro del objeto <strong>methods {}</strong>, y utilizar la función <strong>created()</strong> para ejecutar la función apenas se cree la instancia Vue.js.</p>
+                <p>Ésto tenés que ponerlo dentro de una función (yo la nombré <strong>getBtc()</strong>)y dentro del objeto <strong>methods {}</strong>. Usá la función <strong>created()</strong> para ejecutar getBtc() apenas se cree la instancia Vue.js. ¡Mirá como lo armé!</p>
                 <textarea class="full-width code">let bitcoinApp = new Vue(
 {   // Acá comienza el objeto
     el: '#bitcoinApp', // 'el' es el elemento HTML que accederá a 'data'
     data: { // 'data' es un objeto dentro del objeto de Vue, ¿que loco, no? :D
         btcData: {} // Creo este objeto vacío para llenarlo después
     },
+    created() {
+        this.getBtc;
+    },
     methods: { // Acá puedo escribir funciones/métodos
-        axios.get('https://www.bitstamp.net/api/v2/ticker/btcusd')
-        .then(response => {
-            console.log(response.data);
-        });
+        getBtc() {
+            axios.get('https://www.bitstamp.net/api/v2/ticker/btcusd')
+            .then(response => {
+                console.log(response.data);
+            });
+        }
     },
     delimiters: ['__', '__'] // Esta propiedad me permite indicar con qué símbolos acceder a la información de 'data'. Son cómo los picos de apertura y cierre de HTML, sólo que yo los reemplazo por dos guiones bajos (para evitar confusión)
 }   // Acá finaliza el objeto
