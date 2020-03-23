@@ -423,8 +423,14 @@ if(nombreValido) { // Si 'nombreValido' es true
                 <div class="configurar-una-vista-de-vue-js"></div>
                 <div>
                     <p>Entre tus etiquetas head, incluí el Javascript necesario, osea incluí el framework Vue.js y Axios.</p>
-                    <textarea class="full-width code">wasd</textarea>
+                    <p>Podés buscar una <strong>CDN</strong>, es decir, un sitio que aloje las bibliotecas que querés incluir en tu sitio. La ventaja de ésto es que no tenés que guardar los scripts en tu PC. La desventaja es que, probablemente, llamar a un script de un servidor externo podría ser más lento que tenerlo alojado en tu propio servidor.<br />
+                    Esto se acentúa cuándo el servidor externo tiene mucha carga de otros sitios webs.</p>
+                    <h3>CDN de Vue.Js y Axios</h3>
+                    <p>Si por el momento querés tener estos scripts en la nube, te recomiendo visitar <a href="https://cdnjs.com/libraries/vue">este CDN de Vue.js</a> y este de <a href="https://cdnjs.com/libraries/axios">Axios</a>.</p>
+                    <h3>Ejemplo de inclusión de scripts</h3>
+                    <textarea class="code full-width"><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.common.dev.js"></script> <!-- Poné esta línea de código entre tus etiquetas head --></textarea>
                     <p>Instalá el plugin de Vue.Js para <a href="#">Firefox</a> o <a href="#">Chrome</a>, de forma tal que puedas acceder a tu aplicación Vue.js de forma más conveniente, desde una pestaña de las Herramientas de Desarrollador (apretando F12).</p>
+                    <p>Tené en cuenta que para que Vue.js esté disponible en las Herramientas de Desarrollador, debés incluir "Vue.js <strong>dev</strong>.</p>
                     <p>Una vez que tengas Vue.js y Axios entre tus etiquetas head, podés instanciar Vue en una variable o constante, y luego pasarle un objeto como parámetro.</p>
                     <h3><a class="tooltip" data-title="Acordate SIEMPRE de encerrar el código javascript con la etiqueta script">Ejemplo</a></h3>
                     <textarea class="full-width code">let bitcoinApp = new Vue(
