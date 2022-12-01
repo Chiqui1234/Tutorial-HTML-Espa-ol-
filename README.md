@@ -1,6 +1,6 @@
 # Tutorial para desarrollo web full-stack
 
-[Link al tutorial](https://chiqui1234.github.io/Tutorial-para-desarrollo-web-full-stack/)
+[Link al tutorial](https://chiqui1234ok.github.io/Tutorial-para-desarrollo-web-full-stack/)
 
 ## Este tutorial estará acompañado por videos
 ### En breve tendrás acceso gratuito a una serie de Desarrollo Web en YouTube
